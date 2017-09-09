@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="/webjars/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/4.0.0-beta/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+    <title>Error!!!</title>
+    <style media="all">
+        .jumbotron{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="jumbotron alert-danger">
+        <h1>Oops... something went wrong.</h1>
+        <h2 th:text="${status + ' - ' + error}"></h2>
+        <a th:href="@{/}" href="/" class="btn btn-warning">Go to Home</a>
+    </div>
+</div>
+</body>
+</html>

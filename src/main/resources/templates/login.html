@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="/webjars/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/4.0.0-beta/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+    <link href="../static/css/login.css" th:href="@{/css/login.css}" rel="stylesheet" media="screen"/>
+
+    <title>Library : Login</title>
+</head>
+<body>
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <div class="form-login">
+            <h4>Welcome back.</h4>
+            <div th:if="${param.error}" class="text-danger">
+                Invalid username and password.
+            </div>
+            <div th:if="${param.logout}" class="text-danger">
+                You have been logged out.
+            </div>
+            <form th:action="@{/login}" method="post">
+                <div class="form-group">
+                    <input type="text" name="username" class="form-control input-sm chat-input" placeholder="username"/>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="form-control input-sm chat-input" placeholder="password"/>
+                </div>
+                <div class="wrapper">
+                    <button class="btn btn-primary btn-md" type="submit">login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+
+<script src="webjars/jquery/1.11.1/jquery.min.js" th:src="@{/webjars/jquery/1.11.1/jquery.min.js}"></script>
+<script src="webjars/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+        th:src="@{/webjars/bootstrap/4.0.0-beta/js/bootstrap.min.js}"></script>
+</body>
+</html>
